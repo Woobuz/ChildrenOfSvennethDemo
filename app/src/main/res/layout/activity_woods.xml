@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3eb623"
+    tools:context=".scripts.WoodsActivity">
+
+    <Button
+        android:id="@+id/clickableResourceArea"
+        android:layout_width="match_parent"
+        android:layout_height="308dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp" />
+
+    <TextView
+        android:id="@+id/woodStorage"
+        android:layout_width="217dp"
+        android:layout_height="52dp"
+        android:paddingLeft="10dp"
+        android:text="Wood: 0"
+        android:textSize="36sp"/>
+
+    <Button
+        android:id="@+id/goBackToVillage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="Go Back" />
+
+</RelativeLayout>

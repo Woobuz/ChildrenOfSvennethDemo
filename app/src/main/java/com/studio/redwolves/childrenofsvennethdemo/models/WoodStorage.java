@@ -11,11 +11,19 @@ public class WoodStorage {
     public void addWood(){
         wood += ADD_WOOD;
         allWoodChopped += ADD_WOOD;
-        if (allWoodChopped == milestone){
-            wood += wood_bonus;
-            allWoodChopped += wood_bonus;
-            wood_bonus += 40;
-            milestone = milestone*3;
+//        if (allWoodChopped == milestone){
+//            wood += wood_bonus;
+//            allWoodChopped += wood_bonus;
+//            wood_bonus += 40;
+//        }
+    }
+
+    public boolean useWood(int countOfWood){
+        if (wood - countOfWood >= 0){
+            wood -= countOfWood;
+            return true;
+        } else {
+            return false;
         }
     }
 }

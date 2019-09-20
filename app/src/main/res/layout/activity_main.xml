@@ -48,4 +48,77 @@
         android:layout_marginBottom="-54dp"
         android:src="@drawable/house1" />
 
+    <TextView
+        android:id="@+id/globalWood"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/globalFood"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="6dp"
+        android:layout_toEndOf="@+id/foodIcon"
+        android:text="0"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/globalFood"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/foodIcon"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="194dp"
+        android:layout_toEndOf="@+id/foodIcon"
+        android:text="0"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/woodiconx"
+        android:layout_width="35dp"
+        android:layout_height="44dp"
+        android:layout_alignStart="@+id/foodIcon"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="38dp"
+        android:src="@drawable/wood_icon" />
+
+    <ImageView
+        android:id="@+id/foodIcon"
+        android:layout_width="42dp"
+        android:layout_height="29dp"
+        android:layout_above="@+id/showResourcesButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-115dp"
+        android:src="@drawable/mieso" />
+
+    <Button
+        android:id="@+id/showResourcesButton"
+        android:layout_width="131dp"
+        android:layout_height="111dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-90dp"
+        android:layout_marginTop="113dp"
+        android:layout_toEndOf="@+id/woodiconx"
+        android:background="#00ffffff" />
+
+    <ImageView
+        android:id="@+id/requiredWoodx"
+        android:layout_width="29dp"
+        android:layout_height="15dp"
+        android:layout_alignTop="@+id/globalFood"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/wood_icon" />
+
+    <TextView
+        android:id="@+id/requiredWood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/magichouse"
+        android:layout_toEndOf="@+id/requiredWoodx"
+        android:text="120"
+        android:textColor="#f00" />
+
 </RelativeLayout>

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.studio.redwolves.childrenofsvennethdemo.R;
+import com.studio.redwolves.childrenofsvennethdemo.models.FoodStorage;
 import com.studio.redwolves.childrenofsvennethdemo.models.WoodStorage;
 import com.studio.redwolves.childrenofsvennethdemo.scripts.MapActivity;
 import com.studio.redwolves.childrenofsvennethdemo.scripts.WoodsActivity;
@@ -20,8 +21,15 @@ public class MainActivity extends Activity {
     private Button goToForestButton;
     private Button goToWorldMapButton;
     private WoodStorage currentWood;
+    private FoodStorage currentFood;
     private ImageView buildingSpace;
     private ImageView magicHouse;
+    private ImageView woodIcon;
+    private ImageView foodIcon, requiredWoodx;
+    private TextView requiredWood;
+    private TextView foodAvailable;
+    private TextView woodAvailable;
+    private Button showResourcesButton;
     private static boolean placeVisible = true;
 
     @Override
@@ -33,20 +41,60 @@ public class MainActivity extends Activity {
         currentWood = new WoodStorage();
         buildingSpace = findViewById(R.id.buildingSpace);
         magicHouse = findViewById(R.id.magichouse);
+        requiredWood = findViewById(R.id.requiredWood);
+        requiredWoodx = findViewById(R.id.requiredWoodx);
+
+
+        showResourcesButton = findViewById(R.id.showResourcesButton);
+        woodIcon = findViewById(R.id.woodiconx);
+        foodIcon = findViewById(R.id.foodIcon);
+        foodAvailable = findViewById(R.id.globalFood);
+        woodAvailable = findViewById(R.id.globalWood);
+
+        woodIcon.setVisibility(View.INVISIBLE);
+        foodIcon.setVisibility(View.INVISIBLE);
+        foodAvailable.setVisibility(View.INVISIBLE);
+        woodAvailable.setVisibility(View.INVISIBLE);
+
+        final String existingWood = ""+currentWood.getWood();
+        final TextView woodStorageOnLoad = findViewById(R.id.globalWood);
+        woodStorageOnLoad.setText(existingWood);
 
         setVisibilityOfBuildingPlace();
 
         buildingSpace.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                if (currentWood.useWood(120) == true){
                     placeVisible = false;
-                    setVisibilityOfBuildingPlace();
+                    final String newWood = ""+currentWood.getWood();
+                    woodStorageOnLoad.setText(newWood);
+                }
+                setVisibilityOfBuildingPlace();
             }
         });
 
-        String existingWood = "Wood: "+currentWood.getWood();
-//        final TextView woodStorageOnLoad = findViewById(R.id.globalWood);
-//        woodStorageOnLoad.setText(existingWood);
+        showResourcesButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if (woodIcon.getVisibility() == View.INVISIBLE){
+                    woodIcon.setVisibility(View.VISIBLE);
+                    foodIcon.setVisibility(View.VISIBLE);
+                    foodAvailable.setText(""+currentFood.getFood());
+                    foodAvailable.setVisibility(View.VISIBLE);
+                    woodAvailable.setVisibility(View.VISIBLE);
+                    new android.os.Handler().postDelayed(
+                            new Runnable() {
+                                public void run() {
+                                    woodIcon.setVisibility(View.INVISIBLE);
+                                    foodIcon.setVisibility(View.INVISIBLE);
+                                    foodAvailable.setVisibility(View.INVISIBLE);
+                                    woodAvailable.setVisibility(View.INVISIBLE);
+                                }
+                            }, 2000);
+                }
+            }
+        });
 
         goToForest();
         goToWorldMap();
@@ -60,9 +108,13 @@ public class MainActivity extends Activity {
 
     public void setVisibilityOfBuildingPlace(){
         if (placeVisible == true){
+            requiredWood.setVisibility(View.VISIBLE);
+            requiredWoodx.setVisibility(View.VISIBLE);
             buildingSpace.setVisibility(View.VISIBLE);
             magicHouse.setVisibility(View.INVISIBLE);
         } else {
+            requiredWood.setVisibility(View.INVISIBLE);
+            requiredWoodx.setVisibility(View.INVISIBLE);
             buildingSpace.setVisibility(View.INVISIBLE);
             magicHouse.setVisibility(View.VISIBLE);
         }

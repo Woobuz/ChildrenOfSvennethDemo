@@ -5,27 +5,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/map_village"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/globalWood"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_woodcutter"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="-1dp"
-        android:text="Wood: 0"
-        android:textAlignment="center" />
+    android:background="@drawable/map_empty"
+    tools:context=".scripts.MainActivity">
 
     <Button
         android:id="@+id/button_woodcutter"
+        android:layout_width="122dp"
+        android:layout_height="93dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="213dp"
+        android:background="#00ffffff"/>
+
+    <Button
+        android:id="@+id/button_world"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:text="Woodcutter" />
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="24dp"
+        android:text="World Map" />
+
+    <ImageView
+        android:id="@+id/buildingSpace"
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginBottom="185dp"
+        android:src="@drawable/miejsce_maly_rozmiar" />
+
+    <ImageView
+        android:id="@+id/magichouse"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button_world"
+        android:layout_alignBottom="@+id/button_woodcutter"
+        android:layout_marginEnd="-70dp"
+        android:layout_marginBottom="-54dp"
+        android:src="@drawable/house1" />
 
 </RelativeLayout>

@@ -5,25 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3eb623"
-    tools:context=".scripts.WoodsActivity">
+    tools:context=".scripts.WoodsActivity"
+    android:background="@drawable/las2">
 
     <Button
         android:id="@+id/clickableResourceArea"
         android:layout_width="match_parent"
-        android:layout_height="308dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginBottom="0dp" />
+        android:layout_marginBottom="0dp"
+        android:background="#00ffffff" />
 
     <TextView
         android:id="@+id/woodStorage"
-        android:layout_width="217dp"
-        android:layout_height="52dp"
+        android:layout_width="114dp"
+        android:layout_height="62dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="92dp"
+        android:layout_toStartOf="@+id/goBackToVillage"
+        android:layout_toEndOf="@+id/woodIcon"
+        android:paddingTop="10dp"
         android:paddingLeft="10dp"
-        android:text="Wood: 0"
-        android:textSize="36sp"/>
+        android:text="0"
+        android:textSize="36sp" />
 
     <Button
         android:id="@+id/goBackToVillage"
@@ -32,5 +40,27 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:text="Go Back" />
+
+    <ImageView
+        android:id="@+id/woodIcon"
+        android:layout_width="70dp"
+        android:layout_height="39dp"
+        android:layout_above="@+id/clickableResourceArea"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="-55dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/wood_icon" />
+
+    <ImageView
+        android:id="@+id/tree"
+        android:layout_width="335dp"
+        android:layout_height="307dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/drzewo" />
 
 </RelativeLayout>

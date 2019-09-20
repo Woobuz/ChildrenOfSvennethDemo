@@ -2,19 +2,19 @@ package com.studio.redwolves.childrenofsvennethdemo.scripts;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.studio.redwolves.childrenofsvennethdemo.MainActivity;
 import com.studio.redwolves.childrenofsvennethdemo.R;
 import com.studio.redwolves.childrenofsvennethdemo.models.WoodStorage;
 
 public class WoodsActivity extends Activity {
     private Button goBack;
     private WoodStorage currentWood;
+    private ImageView tree;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,9 @@ public class WoodsActivity extends Activity {
 
         currentWood = new WoodStorage();
 
-        String existingWood = "Wood: "+currentWood.getWood();
+        tree = findViewById(R.id.tree);
+
+        String existingWood = ""+currentWood.getWood();
         final TextView woodStorageOnLoad = findViewById(R.id.woodStorage);
         woodStorageOnLoad.setText(existingWood);
 
@@ -45,8 +47,18 @@ public class WoodsActivity extends Activity {
             @Override
             public void onClick(View v){
                 currentWood.addWood();
-                String newValue = "Wood: "+currentWood.getWood();
+                String newValue = ""+currentWood.getWood();
                 woodStorage.setText(newValue);
+
+                tree.setScaleX(0.9f);
+                tree.setScaleY(0.9f);
+
+                new android.os.Handler().postDelayed(
+                        new Runnable() {
+                            public void run() {
+                                tree.setScaleX(1f);
+                                tree.setScaleY(1f);
+                            }}, 50);
             }
         });
     }

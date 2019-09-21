@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
     private TextView requiredWood;
     private TextView foodAvailable;
     private TextView woodAvailable;
+    private ImageView marketplace;
     private Button showResourcesButton;
     private static boolean placeVisible = true;
 
@@ -43,6 +44,7 @@ public class MainActivity extends Activity {
         magicHouse = findViewById(R.id.magichouse);
         requiredWood = findViewById(R.id.requiredWood);
         requiredWoodx = findViewById(R.id.requiredWoodx);
+        marketplace = findViewById(R.id.marketplace);
 
 
         showResourcesButton = findViewById(R.id.showResourcesButton);
@@ -99,6 +101,7 @@ public class MainActivity extends Activity {
         goToForest();
         goToWorldMap();
         goToMagicHouse();
+        goToMarketplace();
     }
 
     @Override
@@ -132,6 +135,20 @@ public class MainActivity extends Activity {
 
     public void walkToForest(){
         Intent intent = new Intent(this, WoodsActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToMarketplace(){
+        marketplace.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                walkToMarketplace();
+            }
+        });
+    }
+
+    public void walkToMarketplace(){
+        Intent intent = new Intent(this, MarketplaceActivity.class);
         startActivity(intent);
     }
 

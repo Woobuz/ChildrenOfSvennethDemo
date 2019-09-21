@@ -28,6 +28,8 @@
             android:screenOrientation="landscape"></activity>
         <activity android:name=".scripts.MainActivity"
             android:screenOrientation="landscape"></activity>
+        <activity android:name=".scripts.MarketplaceActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

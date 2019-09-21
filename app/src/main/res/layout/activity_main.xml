@@ -121,4 +121,14 @@
         android:text="120"
         android:textColor="#f00" />
 
+    <ImageView
+        android:id="@+id/marketplace"
+        android:layout_width="113dp"
+        android:layout_height="111dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-234dp"
+        android:layout_marginBottom="80dp"
+        android:layout_toStartOf="@+id/woodiconx"
+        android:src="@drawable/targowiskoo" />
+
 </RelativeLayout>
